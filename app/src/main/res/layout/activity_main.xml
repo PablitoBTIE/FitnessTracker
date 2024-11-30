@@ -1,80 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="MainActivity">
-
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <EditText
         android:id="@+id/distanceInput"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Dystans (km)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:inputType="numberDecimal"/>
 
     <EditText
         android:id="@+id/timeInput"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Czas trwania (minuty)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/distanceInput"
         android:inputType="number"/>
 
     <EditText
         android:id="@+id/caloriesInput"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Spalone kalorie"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/timeInput"
         android:inputType="number"/>
 
     <SeekBar
         android:id="@+id/intensitySeekBar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="100"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/caloriesInput"/>
+        android:max="100"/>
 
     <RadioGroup
         android:id="@+id/activityRadioGroup"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/intensitySeekBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:orientation="vertical">
 
         <RadioButton
             android:id="@+id/walkRadio"
             android:text="Spacer"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            />
+            android:layout_height="wrap_content"/>
 
         <RadioButton
             android:id="@+id/runRadio"
             android:text="Bieg"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            />
+            android:layout_height="wrap_content"/>
 
         <RadioButton
             android:id="@+id/strengthRadio"
             android:text="Trening siłowy"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            />
+            android:layout_height="wrap_content"/>
 
     </RadioGroup>
 
@@ -83,18 +64,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dodaj trening"
-        app:layout_constraintTop_toBottomOf="@id/activityRadioGroup"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+        android:layout_gravity="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/trainingRecyclerView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/addButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_weight="1"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
